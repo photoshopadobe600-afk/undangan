@@ -1003,7 +1003,7 @@ function pickAtt(v){
  
 // ⚠️ GANTI URL INI dengan endpoint Formspree Anda
 // Cara: daftar di formspree.io → New Form → copy endpoint
-var FORMSPREE_URL = 'https://formspree.io/f/xkoykgpg';
+var FORMSPREE_URL = 'https://script.google.com/macros/s/AKfycbyudBCv4DUb68wUPM3b5m8QkPVBxrAxxpCp99LBredZmhil0so_hsR5r_54eXm1A4Gj/exec';
  
 function doSubmit(){
   var name    = document.getElementById('f-name').value.trim();
@@ -1035,19 +1035,17 @@ function doSubmit(){
     method: 'POST',
     headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      '👤 Nama Tamu'        : name,
-      '📱 WhatsApp'         : phone,
-      '🎪 Sesi Acara'       : sessionLabel,
-      '👥 Jumlah Tamu'      : count + ' orang',
-      '✅ Kehadiran'        : kehadiranLabel,
-      '💌 Doa & Ucapan'    : wish || '(tidak diisi)',
-      '_subject'            : '🌸 RSVP Undangan – ' + name,
-      '_replyto'            : phone + '@wa.notif'
+      nama: name,
+      phone: phone,
+      session: sessionLabel,
+      count: count + ' orang',
+      attendance: kehadiranLabel,
+      wish: wish || '(tidak diisi)'
     })
   })
   .then(function(res){ return res.json(); })
   .then(function(data){
-    if(data.ok){
+    if(data.result === "success"){
       // Sukses
       document.getElementById('rsvp-form').style.display='none';
       var ty = document.getElementById('ty');
