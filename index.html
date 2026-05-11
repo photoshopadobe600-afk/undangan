@@ -23,7 +23,7 @@
   --border:rgba(184,150,62,0.2);
 }
 html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hidden;scroll-behavior:smooth}
-
+ 
 /* ── SPLASH ── */
 #splash{
   position:fixed;inset:0;z-index:9999;
@@ -32,7 +32,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
   transition:opacity 1s ease,transform 1s ease;
 }
 #splash.exit{opacity:0;transform:scale(1.04);pointer-events:none}
-
+ 
 .splash-petals{position:absolute;inset:0;overflow:hidden;pointer-events:none}
 .petal{
   position:absolute;
@@ -45,7 +45,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
   90%{opacity:.4}
   100%{transform:translateY(110vh) rotate(360deg);opacity:0}
 }
-
+ 
 .splash-ring{
   width:220px;height:220px;border-radius:50%;
   border:1px solid var(--gold2);
@@ -62,7 +62,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
 .splash-name{font-family:'Great Vibes',cursive;font-size:44px;line-height:1.05;color:var(--dark);text-align:center}
 .splash-and{font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:var(--gold2);display:block;margin:2px 0}
 .splash-date{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--light);margin-top:10px}
-
+ 
 .open-wrap{margin-top:36px;display:flex;flex-direction:column;align-items:center;gap:10px}
 .open-hint{font-family:'Lato',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--light)}
 .open-btn{
@@ -72,11 +72,11 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
   cursor:pointer;border-radius:1px;transition:all .3s;
 }
 .open-btn:active{background:var(--gold);color:#fff}
-
+ 
 /* ── PAGES ── */
 #app{display:none}
 #app.show{display:block}
-
+ 
 /* sticky dots */
 .dots{
   position:fixed;right:14px;top:50%;transform:translateY(-50%);
@@ -88,17 +88,17 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
   cursor:pointer;transition:all .3s;
 }
 .dot.on{background:var(--gold);height:20px;border-radius:3px}
-
+ 
 /* ── COVER PAGE ── */
 #p1{min-height:100vh;background:var(--cream);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center}
-
+ 
 /* large watermark floral bg */
 .bg-floral{position:absolute;inset:0;pointer-events:none;z-index:0}
-
+ 
 /* top arch decoration */
 .arch-top{width:100%;text-align:center;padding-top:48px;position:relative;z-index:2}
 .arch-label{font-family:'Cinzel',serif;font-size:7px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-
+ 
 /* photo frame */
 .photo-frame{
   position:relative;z-index:2;margin:18px auto 0;
@@ -127,12 +127,12 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
 }
 /* Floral frame petals around circle */
 .frame-petals{position:absolute;width:230px;height:230px;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:3}
-
+ 
 .cover-names{position:relative;z-index:2;text-align:center;padding:0 28px;margin-top:20px}
 .groom-name{font-family:'Great Vibes',cursive;font-size:48px;color:var(--dark);line-height:1}
 .bride-name{font-family:'Great Vibes',cursive;font-size:48px;color:var(--dark);line-height:1}
 .names-and{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--gold2);display:block;margin:2px 0}
-
+ 
 .cover-divider{
   display:flex;align-items:center;justify-content:center;gap:10px;
   margin:16px 0 8px;
@@ -140,10 +140,10 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
 .cdl{flex:1;max-width:55px;height:0.5px;background:linear-gradient(to right,transparent,var(--gold2))}
 .cdr{flex:1;max-width:55px;height:0.5px;background:linear-gradient(to left,transparent,var(--gold2))}
 .cd-diamond{width:5px;height:5px;background:var(--gold);transform:rotate(45deg)}
-
+ 
 .cover-date{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--mid);text-align:center}
 .cover-loc{font-family:'Lato',sans-serif;font-size:10px;letter-spacing:2px;color:var(--light);text-align:center;margin-top:4px;font-weight:300}
-
+ 
 .scroll-indicator{
   position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
   display:flex;flex-direction:column;align-items:center;gap:5px;
@@ -152,22 +152,22 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
 @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
 .scroll-indicator span{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--light)}
 .scroll-line{width:0.5px;height:26px;background:linear-gradient(to bottom,var(--gold2),transparent)}
-
+ 
 /* ── DETAIL PAGE ── */
 #p2{min-height:100vh;background:#fff;padding:0 0 80px;position:relative;overflow:hidden}
-
+ 
 .page-top{text-align:center;padding:60px 28px 28px;position:relative}
 .section-eyebrow{font-family:'Cinzel',serif;font-size:7px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
 .section-title{font-family:'Playfair Display',serif;font-size:26px;font-style:italic;font-weight:400;color:var(--dark);line-height:1.3}
-
+ 
 .bride-groom-wrap{padding:0 20px;display:flex;flex-direction:column;gap:0}
-
+ 
 .person-card{
   display:flex;gap:16px;align-items:center;
   padding:20px 0;
 }
 .person-card+.person-card{border-top:0.5px solid rgba(184,150,62,0.15)}
-
+ 
 .person-photo{
   width:68px;height:68px;flex-shrink:0;border-radius:50%;
   border:1px solid var(--gold3);
@@ -177,17 +177,17 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
   position:relative;overflow:hidden;
 }
 .person-photo::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:0.5px dashed rgba(184,150,62,0.3)}
-
+ 
 .person-info{}
 .person-role{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
 .person-name{font-family:'Playfair Display',serif;font-size:19px;font-weight:500;color:var(--dark);margin-bottom:4px}
 .person-parents{font-size:11px;color:var(--light);font-weight:300;line-height:1.6}
-
+ 
 .and-banner{
   text-align:center;padding:4px 0;
   font-family:'Great Vibes',cursive;font-size:44px;color:var(--gold2);
 }
-
+ 
 .event-section{padding:10px 20px 0;display:flex;flex-direction:column;gap:12px}
 .event-item{
   border:0.5px solid rgba(184,150,62,0.2);
@@ -209,7 +209,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
 .ev-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;color:var(--dark);margin-bottom:7px}
 .ev-detail{font-size:12px;color:var(--mid);line-height:1.8;font-weight:300}
 .ev-detail b{font-weight:400;color:var(--dark)}
-
+ 
 .quran-box{
   margin:18px 20px 0;
   padding:20px 20px;
@@ -220,10 +220,10 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
 }
 .quran-text{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--mid);line-height:1.8;font-weight:400}
 .quran-ref{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--gold);margin-top:10px}
-
+ 
 /* ── MAPS PAGE ── */
 #p3{min-height:100vh;background:var(--cream);padding:0 0 80px;position:relative;overflow:hidden}
-
+ 
 .map-frame{
   width:100%;height:260px;
   position:relative;overflow:hidden;
@@ -233,7 +233,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
   position:absolute;top:0;left:0;right:0;height:30px;
   background:linear-gradient(to bottom,var(--cream),transparent);pointer-events:none;z-index:2;
 }
-
+ 
 .loc-cards{padding:16px 20px 0;display:flex;flex-direction:column;gap:11px}
 .loc-card{
   display:flex;gap:14px;
@@ -251,7 +251,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
 }
 .loc-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:500;color:var(--dark);margin-bottom:3px}
 .loc-addr{font-size:11px;color:var(--light);line-height:1.6;font-weight:300}
-
+ 
 .map-btn-wrap{padding:16px 20px 0}
 .map-btn{
   display:flex;align-items:center;justify-content:center;gap:9px;
@@ -262,7 +262,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
   text-decoration:none;cursor:pointer;transition:all .3s;
 }
 .map-btn:active{background:var(--gold);color:#fff}
-
+ 
 /* countdown */
 .countdown-wrap{
   margin:18px 20px 0;
@@ -282,10 +282,10 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
   background:var(--gold-pale);
 }
 .cd-lbl{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--light)}
-
+ 
 /* ── RSVP PAGE ── */
 #p4{min-height:100vh;background:#fff;padding:0 0 80px;position:relative;overflow:hidden}
-
+ 
 .form-wrap{padding:0 20px}
 .fgroup{margin-bottom:20px}
 .flabel{
@@ -306,7 +306,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M2 3.5l3 3 3-3' fill='none' stroke='%23B8963E' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 2px center;padding-right:20px;cursor:pointer;
 }
-
+ 
 .attend-row{display:flex;gap:10px;margin-top:4px}
 .att{
   flex:1;padding:12px 6px;border:0.5px solid rgba(184,150,62,0.2);
@@ -317,7 +317,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
 .att-ico{font-size:18px;display:block;margin-bottom:4px}
 .att-lbl{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:2px;text-transform:uppercase;color:var(--mid)}
 .att.on .att-lbl{color:var(--gold)}
-
+ 
 .submit-btn{
   width:100%;padding:15px;margin-top:6px;
   border:1px solid var(--gold);border-radius:2px;
@@ -326,13 +326,13 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
   cursor:pointer;transition:all .3s;
 }
 .submit-btn:active{background:var(--gold);color:#fff}
-
+ 
 .thankyou{display:none;text-align:center;padding:28px 0}
 .ty-icon{font-size:44px;margin-bottom:14px}
 .ty-title{font-family:'Great Vibes',cursive;font-size:36px;color:var(--dark);margin-bottom:8px}
 .ty-msg{font-size:13px;color:var(--light);font-weight:300;line-height:1.7;padding:0 10px}
 .ty-verse{margin-top:18px;padding:16px;background:var(--ivory);border-radius:2px;font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:var(--mid);line-height:1.7}
-
+ 
 /* RSVP footer */
 .invitation-footer{
   text-align:center;padding:38px 24px 20px;
@@ -341,17 +341,17 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
 .footer-name{font-family:'Great Vibes',cursive;font-size:34px;color:var(--dark);margin-bottom:6px}
 .footer-line{width:44px;height:0.5px;background:linear-gradient(to right,transparent,var(--gold2),transparent);margin:0 auto 10px}
 .footer-date{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--light);text-transform:uppercase}
-
+ 
 /* ── FLORAL SVG HELPERS ── */
 .corner-fl{position:absolute;pointer-events:none}
 </style>
 </head>
 <body>
-
+ 
 <!-- ===== SPLASH ===== -->
 <div id="splash">
   <div class="splash-petals" id="petals"></div>
-
+ 
   <!-- big background watermark florals -->
   <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.12;pointer-events:none" viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg">
     <g fill="none" stroke="#B8963E" stroke-width=".6">
@@ -387,22 +387,22 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
       <circle cx="195" cy="770" r="3"/><circle cx="165" cy="790" r="2"/><circle cx="220" cy="760" r="2.5"/>
     </g>
   </svg>
-
+ 
   <div class="splash-ring">
     <p class="splash-tag">Wedding Invitation</p>
     <span class="splash-name">Rizky<span class="splash-and">&amp;</span>Amelia</span>
     <p class="splash-date">22 · VI · 2025</p>
   </div>
-
+ 
   <div class="open-wrap">
     <p class="open-hint">Ketuk untuk membuka</p>
     <button class="open-btn" onclick="openApp()">Buka Undangan ✦</button>
   </div>
 </div>
-
+ 
 <!-- ===== APP ===== -->
 <div id="app">
-
+ 
   <!-- NAV DOTS -->
   <div class="dots">
     <div class="dot on" onclick="scrollTo('p1')"></div>
@@ -410,10 +410,10 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
     <div class="dot" onclick="scrollTo('p3')"></div>
     <div class="dot" onclick="scrollTo('p4')"></div>
   </div>
-
+ 
   <!-- ═══ PAGE 1: SAMPUL ═══ -->
   <section id="p1">
-
+ 
     <!-- large watermark floral background -->
     <svg class="bg-floral" viewBox="0 0 390 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="opacity:.07">
       <g fill="none" stroke="#B8963E" stroke-width="1">
@@ -437,12 +437,12 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
         <ellipse cx="195" cy="880" rx="50" ry="18"/>
       </g>
     </svg>
-
+ 
     <!-- arch top label -->
     <div class="arch-top">
       <p class="arch-label">— The Wedding of —</p>
     </div>
-
+ 
     <!-- PHOTO FRAME -->
     <div class="photo-frame" style="margin-top:22px">
       <!-- Floral petals around the frame -->
@@ -490,7 +490,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
           <circle cx="20" cy="20" r="2"/>
         </g>
       </svg>
-
+ 
       <div class="photo-outer">
         <div class="photo-inner">
           <!-- Placeholder: pasangan foto dapat dimasukkan di sini -->
@@ -515,7 +515,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
             <!-- soft floral hint bg -->
             <circle cx="90" cy="90" r="85" fill="none" stroke="#D4AF5A" stroke-width=".4" opacity=".4"/>
             <circle cx="90" cy="90" r="78" fill="none" stroke="#D4AF5A" stroke-width=".3" opacity=".2"/>
-
+ 
             <!-- GROOM (left, slightly front) -->
             <!-- body/suit -->
             <path d="M54,140 Q46,120 48,105 L62,100 L70,140 Z" fill="url(#suitG)"/>
@@ -543,7 +543,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
             <path d="M58,90 Q62,93 66,90" fill="none" stroke="#C0906A" stroke-width="1" stroke-linecap="round"/>
             <!-- hand -->
             <ellipse cx="70" cy="118" rx="5" ry="4" fill="url(#skinG)"/>
-
+ 
             <!-- BRIDE (right, slightly back) -->
             <!-- dress skirt -->
             <path d="M96,135 Q90,115 93,105 L110,105 Q114,115 118,140 L96,140 Z" fill="url(#dressG)"/>
@@ -581,7 +581,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
             <ellipse cx="89" cy="116" rx="5" ry="4" fill="url(#skinG)"/>
             <!-- ring -->
             <circle cx="71" cy="118" r="2" fill="none" stroke="#D4AF5A" stroke-width=".8"/>
-
+ 
             <!-- bouquet -->
             <circle cx="80" cy="130" r="10" fill="#C8929E" opacity=".8"/>
             <circle cx="75" cy="127" r="7" fill="#D4A8B0" opacity=".7"/>
@@ -596,7 +596,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
             <line x1="82" y1="140" x2="84" y2="148" stroke="#8FAF8A" stroke-width="1.2"/>
             <!-- ribbon -->
             <path d="M76,143 Q80,146 84,143" fill="none" stroke="#D4AF5A" stroke-width=".8"/>
-
+ 
             <!-- decorative dots -->
             <circle cx="20" cy="20" r="1.5" fill="#D4AF5A" opacity=".4"/>
             <circle cx="160" cy="20" r="1.5" fill="#D4AF5A" opacity=".4"/>
@@ -606,14 +606,14 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
         </div>
       </div>
     </div>
-
+ 
     <!-- NAMES -->
     <div class="cover-names">
       <div class="groom-name">Rizky Pratama</div>
       <span class="names-and">&amp;</span>
       <div class="bride-name">Amelia Putri</div>
     </div>
-
+ 
     <div class="cover-divider" style="position:relative;z-index:2;padding:0 40px">
       <div class="cdl"></div>
       <div class="cd-diamond"></div>
@@ -625,7 +625,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
       <p class="cover-date">22 Juni 2025</p>
       <p class="cover-loc">Makassar, Sulawesi Selatan</p>
     </div>
-
+ 
     <!-- corner florals -->
     <svg class="corner-fl" style="top:0;left:0;width:120px;opacity:.35" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
       <g fill="none" stroke="#B8963E" stroke-width=".7">
@@ -669,13 +669,13 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
         <line x1="40" y1="110" x2="40" y2="30"/>
       </g>
     </svg>
-
+ 
     <div class="scroll-indicator">
       <span>Scroll</span>
       <div class="scroll-line"></div>
     </div>
   </section>
-
+ 
   <!-- ═══ PAGE 2: ISI ═══ -->
   <section id="p2">
     <svg class="corner-fl" style="top:0;left:0;width:90px;opacity:.25" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -695,12 +695,12 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
         <line x1="28" y1="80" x2="28" y2="22"/>
       </g>
     </svg>
-
+ 
     <div class="page-top">
       <p class="section-eyebrow">— Dengan Rahmat Allah SWT —</p>
       <p class="section-title">Kami Bermaksud<br>Melangsungkan Pernikahan</p>
     </div>
-
+ 
     <div class="bride-groom-wrap" style="padding:0 20px">
       <div class="person-card">
         <div class="person-photo">R</div>
@@ -720,7 +720,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
         </div>
       </div>
     </div>
-
+ 
     <div class="event-section">
       <div class="event-item">
         <div class="ev-tag">💍 Akad Nikah <div class="ev-tag-line"></div></div>
@@ -743,13 +743,13 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
         </div>
       </div>
     </div>
-
+ 
     <div class="quran-box">
       <p class="quran-text">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."</p>
       <p class="quran-ref">— QS. Ar-Rum : 21 —</p>
     </div>
   </section>
-
+ 
   <!-- ═══ PAGE 3: MAPS ═══ -->
   <section id="p3">
     <svg class="corner-fl" style="top:0;right:0;width:90px;opacity:.2;transform:scaleX(-1)" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -761,12 +761,12 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
         <line x1="28" y1="80" x2="28" y2="22"/>
       </g>
     </svg>
-
+ 
     <div class="page-top">
       <p class="section-eyebrow">— Lokasi Acara —</p>
       <p class="section-title">Petunjuk Arah</p>
     </div>
-
+ 
     <!-- Countdown -->
     <div class="countdown-wrap">
       <p class="countdown-label">Menghitung Hari Menuju Hari Bahagia</p>
@@ -789,9 +789,9 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
         </div>
       </div>
     </div>
-
+ 
     <div style="height:14px"></div>
-
+ 
     <div class="map-frame">
       <div class="map-overlay-top"></div>
       <iframe
@@ -799,7 +799,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
-
+ 
     <div class="loc-cards">
       <div class="loc-card">
         <div class="loc-icon-wrap">💍</div>
@@ -816,14 +816,14 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
         </div>
       </div>
     </div>
-
+ 
     <div class="map-btn-wrap">
       <a class="map-btn" href="https://maps.google.com/?q=Makassar,Sulawesi+Selatan" target="_blank">
         🗺️ &nbsp; Buka di Google Maps
       </a>
     </div>
   </section>
-
+ 
   <!-- ═══ PAGE 4: RSVP ═══ -->
   <section id="p4">
     <svg class="corner-fl" style="top:0;left:0;width:90px;opacity:.2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -835,13 +835,13 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
         <line x1="28" y1="80" x2="28" y2="22"/>
       </g>
     </svg>
-
+ 
     <div class="page-top" style="padding-bottom:20px">
       <p class="section-eyebrow">— Konfirmasi Kehadiran —</p>
       <p class="section-title">Formulir Tamu</p>
       <p style="font-size:12px;color:var(--light);margin-top:8px;font-weight:300">Kehadiran Anda adalah kebahagiaan kami</p>
     </div>
-
+ 
     <div class="form-wrap">
       <div id="rsvp-form">
         <div class="fgroup">
@@ -890,7 +890,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
         </div>
         <button class="submit-btn" onclick="doSubmit()">✦ &nbsp; Kirim Konfirmasi &nbsp; ✦</button>
       </div>
-
+ 
       <div class="thankyou" id="ty">
         <div class="ty-icon">🌸</div>
         <p class="ty-title">Terima Kasih</p>
@@ -898,7 +898,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
         <div class="ty-verse">"Semoga Allah memberkahi kalian berdua, dan mengumpulkan kalian dalam kebaikan." — HR. Abu Dawud</div>
       </div>
     </div>
-
+ 
     <div class="invitation-footer">
       <p class="footer-name">Rizky &amp; Amelia</p>
       <div class="footer-line"></div>
@@ -917,9 +917,9 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
       </svg>
     </div>
   </section>
-
+ 
 </div>
-
+ 
 <script>
 // ── FALLING PETALS ──
 (function(){
@@ -941,7 +941,7 @@ html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hi
     wrap.appendChild(p);
   }
 })();
-
+ 
 // ── OPEN ──
 function openApp(){
   document.getElementById('splash').classList.add('exit');
@@ -951,7 +951,7 @@ function openApp(){
     startCountdown();
   },1000);
 }
-
+ 
 // ── DOTS ──
 window.addEventListener('scroll',function(){
   var ids=['p1','p2','p3','p4'];
@@ -966,12 +966,12 @@ window.addEventListener('scroll',function(){
     }
   });
 },{passive:true});
-
+ 
 function scrollTo(id){
   var el=document.getElementById(id);
   if(el)el.scrollIntoView({behavior:'smooth'});
 }
-
+ 
 // ── COUNTDOWN ──
 function startCountdown(){
   var target=new Date('2025-06-22T08:00:00+08:00');
@@ -992,7 +992,7 @@ function startCountdown(){
   }
   tick(); setInterval(tick,1000);
 }
-
+ 
 // ── RSVP ──
 var attChoice='y';
 function pickAtt(v){
@@ -1000,21 +1000,74 @@ function pickAtt(v){
   document.getElementById('att-y').classList.toggle('on',v==='y');
   document.getElementById('att-n').classList.toggle('on',v==='n');
 }
-
+ 
+// ⚠️ GANTI URL INI dengan endpoint Formspree Anda
+// Cara: daftar di formspree.io → New Form → copy endpoint
+var FORMSPREE_URL = 'https://formspree.io/f/xkoykgpg';
+ 
 function doSubmit(){
-  var name=document.getElementById('f-name').value.trim();
-  var phone=document.getElementById('f-phone').value.trim();
-  var session=document.getElementById('f-session').value;
-  if(!name){alert('Mohon isi nama lengkap Anda.');return;}
-  if(!phone){alert('Mohon isi nomor WhatsApp Anda.');return;}
-  if(!session){alert('Mohon pilih sesi kehadiran.');return;}
-  document.getElementById('rsvp-form').style.display='none';
-  var ty=document.getElementById('ty');
-  ty.style.display='block';
-  var msg=attChoice==='y'
-    ?name+', kami sangat senang Anda akan hadir! Sampai jumpa di hari bahagia kami. 🌸'
-    :name+', terima kasih atas doa dan ucapan Anda. Semoga kita dapat bertemu di kesempatan lain. 🙏';
-  document.getElementById('ty-msg').textContent=msg;
+  var name    = document.getElementById('f-name').value.trim();
+  var phone   = document.getElementById('f-phone').value.trim();
+  var session = document.getElementById('f-session').value;
+  var count   = document.getElementById('f-count').value;
+  var wish    = document.getElementById('f-wish').value.trim();
+ 
+  if(!name)   { alert('Mohon isi nama lengkap Anda.');return; }
+  if(!phone)  { alert('Mohon isi nomor WhatsApp Anda.');return; }
+  if(!session){ alert('Mohon pilih sesi kehadiran.');return; }
+ 
+  // Tampilkan loading
+  var btn = document.querySelector('.submit-btn');
+  btn.textContent = '⏳  Mengirim...';
+  btn.disabled = true;
+  btn.style.opacity = '0.6';
+ 
+  var sessionLabel = {
+    'akad'    : 'Akad Nikah · 08.00–10.00 WITA',
+    'resepsi' : 'Resepsi · 11.00–14.00 WITA',
+    'both'    : 'Akad Nikah & Resepsi'
+  }[session] || session;
+ 
+  var kehadiranLabel = attChoice === 'y' ? '✅ HADIR' : '🙏 TIDAK HADIR';
+ 
+  // Kirim ke Formspree → masuk Gmail
+  fetch(FORMSPREE_URL, {
+    method: 'POST',
+    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      '👤 Nama Tamu'        : name,
+      '📱 WhatsApp'         : phone,
+      '🎪 Sesi Acara'       : sessionLabel,
+      '👥 Jumlah Tamu'      : count + ' orang',
+      '✅ Kehadiran'        : kehadiranLabel,
+      '💌 Doa & Ucapan'    : wish || '(tidak diisi)',
+      '_subject'            : '🌸 RSVP Undangan – ' + name,
+      '_replyto'            : phone + '@wa.notif'
+    })
+  })
+  .then(function(res){ return res.json(); })
+  .then(function(data){
+    if(data.ok){
+      // Sukses
+      document.getElementById('rsvp-form').style.display='none';
+      var ty = document.getElementById('ty');
+      ty.style.display = 'block';
+      var msg = attChoice === 'y'
+        ? name + ', kami sangat senang Anda akan hadir! Sampai jumpa di hari bahagia kami. 🌸'
+        : name + ', terima kasih atas doa dan ucapan Anda. Semoga kita dapat bertemu di kesempatan lain. 🙏';
+      document.getElementById('ty-msg').textContent = msg;
+    } else {
+      throw new Error('Formspree error');
+    }
+  })
+  .catch(function(){
+    // Fallback: tetap tampilkan sukses meski gagal kirim
+    // (bisa terjadi jika FORMSPREE_URL belum diisi)
+    btn.textContent = '✦  Kirim Konfirmasi  ✦';
+    btn.disabled = false;
+    btn.style.opacity = '1';
+    alert('❌ Gagal mengirim. Pastikan URL Formspree sudah benar di kode.\n\nCara: formspree.io → New Form → copy endpoint ke variabel FORMSPREE_URL');
+  });
 }
 </script>
 </body>
