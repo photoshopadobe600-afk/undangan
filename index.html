@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Undangan Pernikahan Rizky & Amelia</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Cinzel:wght@400;500&family=Great+Vibes&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --gold:#B8963E;
+  --gold2:#D4AF5A;
+  --gold3:#F0D98A;
+  --gold-pale:#FBF6EA;
+  --rose:#C8929E;
+  --rose-pale:#FDF0F2;
+  --sage:#8FAF8A;
+  --cream:#FEFCF7;
+  --ivory:#FAF7F0;
+  --dark:#1A1208;
+  --mid:#5C4A2A;
+  --light:#9A8868;
+  --border:rgba(184,150,62,0.2);
+}
+html,body{width:100%;background:#fff;font-family:'Lato',sans-serif;overflow-x:hidden;scroll-behavior:smooth}
+
+/* ── SPLASH ── */
+#splash{
+  position:fixed;inset:0;z-index:9999;
+  background:var(--cream);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transition:opacity 1s ease,transform 1s ease;
+}
+#splash.exit{opacity:0;transform:scale(1.04);pointer-events:none}
+
+.splash-petals{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.petal{
+  position:absolute;
+  animation:fall linear infinite;
+  opacity:0;
+}
+@keyframes fall{
+  0%{transform:translateY(-40px) rotate(0deg);opacity:0}
+  10%{opacity:.6}
+  90%{opacity:.4}
+  100%{transform:translateY(110vh) rotate(360deg);opacity:0}
+}
+
+.splash-ring{
+  width:220px;height:220px;border-radius:50%;
+  border:1px solid var(--gold2);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;
+  background:radial-gradient(circle at 40% 35%, rgba(255,255,255,1) 0%, var(--ivory) 100%);
+  box-shadow:0 0 0 8px rgba(212,175,90,0.06), 0 0 0 18px rgba(212,175,90,0.03);
+}
+.splash-ring::before{
+  content:'';position:absolute;inset:-10px;border-radius:50%;
+  border:0.5px dashed rgba(184,150,62,0.3);
+}
+.splash-tag{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.splash-name{font-family:'Great Vibes',cursive;font-size:44px;line-height:1.05;color:var(--dark);text-align:center}
+.splash-and{font-family:'Playfair Display',serif;font-style:italic;font-size:18px;color:var(--gold2);display:block;margin:2px 0}
+.splash-date{font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;color:var(--light);margin-top:10px}
+
+.open-wrap{margin-top:36px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.open-hint{font-family:'Lato',sans-serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--light)}
+.open-btn{
+  padding:13px 40px;border:1px solid var(--gold);
+  background:transparent;color:var(--gold);
+  font-family:'Cinzel',serif;font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  cursor:pointer;border-radius:1px;transition:all .3s;
+}
+.open-btn:active{background:var(--gold);color:#fff}
+
+/* ── PAGES ── */
+#app{display:none}
+#app.show{display:block}
+
+/* sticky dots */
+.dots{
+  position:fixed;right:14px;top:50%;transform:translateY(-50%);
+  display:flex;flex-direction:column;gap:9px;z-index:800;
+}
+.dot{
+  width:6px;height:6px;border-radius:50%;
+  border:1px solid var(--gold2);background:transparent;
+  cursor:pointer;transition:all .3s;
+}
+.dot.on{background:var(--gold);height:20px;border-radius:3px}
+
+/* ── COVER PAGE ── */
+#p1{min-height:100vh;background:var(--cream);position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center}
+
+/* large watermark floral bg */
+.bg-floral{position:absolute;inset:0;pointer-events:none;z-index:0}
+
+/* top arch decoration */
+.arch-top{width:100%;text-align:center;padding-top:48px;position:relative;z-index:2}
+.arch-label{font-family:'Cinzel',serif;font-size:7px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+
+/* photo frame */
+.photo-frame{
+  position:relative;z-index:2;margin:18px auto 0;
+  width:200px;height:200px;
+}
+.photo-outer{
+  width:100%;height:100%;border-radius:50%;
+  border:1.5px solid var(--gold2);
+  padding:6px;
+  background:var(--ivory);
+  position:relative;
+}
+.photo-outer::before{
+  content:'';position:absolute;inset:-8px;border-radius:50%;
+  border:0.5px dashed rgba(184,150,62,0.4);
+}
+.photo-outer::after{
+  content:'';position:absolute;inset:-17px;border-radius:50%;
+  border:0.5px solid rgba(184,150,62,0.15);
+}
+.photo-inner{
+  width:100%;height:100%;border-radius:50%;overflow:hidden;
+  background:linear-gradient(135deg, #f5ede0 0%, #e8d8c8 50%, #f0e4d4 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  position:relative;
+}
+/* Floral frame petals around circle */
+.frame-petals{position:absolute;width:230px;height:230px;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:3}
+
+.cover-names{position:relative;z-index:2;text-align:center;padding:0 28px;margin-top:20px}
+.groom-name{font-family:'Great Vibes',cursive;font-size:48px;color:var(--dark);line-height:1}
+.bride-name{font-family:'Great Vibes',cursive;font-size:48px;color:var(--dark);line-height:1}
+.names-and{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--gold2);display:block;margin:2px 0}
+
+.cover-divider{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  margin:16px 0 8px;
+}
+.cdl{flex:1;max-width:55px;height:0.5px;background:linear-gradient(to right,transparent,var(--gold2))}
+.cdr{flex:1;max-width:55px;height:0.5px;background:linear-gradient(to left,transparent,var(--gold2))}
+.cd-diamond{width:5px;height:5px;background:var(--gold);transform:rotate(45deg)}
+
+.cover-date{font-family:'Cinzel',serif;font-size:11px;letter-spacing:3px;color:var(--mid);text-align:center}
+.cover-loc{font-family:'Lato',sans-serif;font-size:10px;letter-spacing:2px;color:var(--light);text-align:center;margin-top:4px;font-weight:300}
+
+.scroll-indicator{
+  position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:5px;
+  animation:bob 2.2s ease-in-out infinite;
+}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
+.scroll-indicator span{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--light)}
+.scroll-line{width:0.5px;height:26px;background:linear-gradient(to bottom,var(--gold2),transparent)}
+
+/* ── DETAIL PAGE ── */
+#p2{min-height:100vh;background:#fff;padding:0 0 80px;position:relative;overflow:hidden}
+
+.page-top{text-align:center;padding:60px 28px 28px;position:relative}
+.section-eyebrow{font-family:'Cinzel',serif;font-size:7px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.section-title{font-family:'Playfair Display',serif;font-size:26px;font-style:italic;font-weight:400;color:var(--dark);line-height:1.3}
+
+.bride-groom-wrap{padding:0 20px;display:flex;flex-direction:column;gap:0}
+
+.person-card{
+  display:flex;gap:16px;align-items:center;
+  padding:20px 0;
+}
+.person-card+.person-card{border-top:0.5px solid rgba(184,150,62,0.15)}
+
+.person-photo{
+  width:68px;height:68px;flex-shrink:0;border-radius:50%;
+  border:1px solid var(--gold3);
+  background:linear-gradient(135deg,var(--gold-pale),var(--ivory));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Great Vibes',cursive;font-size:28px;color:var(--gold);
+  position:relative;overflow:hidden;
+}
+.person-photo::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:0.5px dashed rgba(184,150,62,0.3)}
+
+.person-info{}
+.person-role{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+.person-name{font-family:'Playfair Display',serif;font-size:19px;font-weight:500;color:var(--dark);margin-bottom:4px}
+.person-parents{font-size:11px;color:var(--light);font-weight:300;line-height:1.6}
+
+.and-banner{
+  text-align:center;padding:4px 0;
+  font-family:'Great Vibes',cursive;font-size:44px;color:var(--gold2);
+}
+
+.event-section{padding:10px 20px 0;display:flex;flex-direction:column;gap:12px}
+.event-item{
+  border:0.5px solid rgba(184,150,62,0.2);
+  background:linear-gradient(135deg,var(--gold-pale) 0%,#fff 100%);
+  border-radius:3px;padding:18px 18px 18px 22px;
+  position:relative;overflow:hidden;
+}
+.event-item::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:2.5px;
+  background:linear-gradient(to bottom,var(--gold3),var(--gold));
+}
+.event-item::after{
+  content:'';position:absolute;right:-20px;top:-20px;
+  width:80px;height:80px;border-radius:50%;
+  border:0.5px solid rgba(184,150,62,0.1);
+}
+.ev-tag{font-family:'Cinzel',serif;font-size:7px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;display:flex;align-items:center;gap:7px}
+.ev-tag-line{flex:1;height:0.5px;background:rgba(184,150,62,0.2)}
+.ev-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;color:var(--dark);margin-bottom:7px}
+.ev-detail{font-size:12px;color:var(--mid);line-height:1.8;font-weight:300}
+.ev-detail b{font-weight:400;color:var(--dark)}
+
+.quran-box{
+  margin:18px 20px 0;
+  padding:20px 20px;
+  background:var(--ivory);
+  border-top:0.5px solid rgba(184,150,62,0.15);
+  border-bottom:0.5px solid rgba(184,150,62,0.15);
+  text-align:center;
+}
+.quran-text{font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--mid);line-height:1.8;font-weight:400}
+.quran-ref{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--gold);margin-top:10px}
+
+/* ── MAPS PAGE ── */
+#p3{min-height:100vh;background:var(--cream);padding:0 0 80px;position:relative;overflow:hidden}
+
+.map-frame{
+  width:100%;height:260px;
+  position:relative;overflow:hidden;
+}
+.map-frame iframe{width:100%;height:100%;border:none;display:block;filter:sepia(.08) contrast(1.03)}
+.map-overlay-top{
+  position:absolute;top:0;left:0;right:0;height:30px;
+  background:linear-gradient(to bottom,var(--cream),transparent);pointer-events:none;z-index:2;
+}
+
+.loc-cards{padding:16px 20px 0;display:flex;flex-direction:column;gap:11px}
+.loc-card{
+  display:flex;gap:14px;
+  padding:16px 16px;
+  border:0.5px solid rgba(184,150,62,0.2);
+  border-radius:3px;background:#fff;
+}
+.loc-icon-wrap{
+  width:40px;height:40px;flex-shrink:0;
+  border-radius:50%;
+  background:var(--gold-pale);
+  border:0.5px solid rgba(184,150,62,0.25);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;
+}
+.loc-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:500;color:var(--dark);margin-bottom:3px}
+.loc-addr{font-size:11px;color:var(--light);line-height:1.6;font-weight:300}
+
+.map-btn-wrap{padding:16px 20px 0}
+.map-btn{
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  width:100%;padding:14px;
+  border:1px solid var(--gold);border-radius:2px;
+  background:transparent;color:var(--gold);
+  font-family:'Cinzel',serif;font-size:8.5px;letter-spacing:3px;text-transform:uppercase;
+  text-decoration:none;cursor:pointer;transition:all .3s;
+}
+.map-btn:active{background:var(--gold);color:#fff}
+
+/* countdown */
+.countdown-wrap{
+  margin:18px 20px 0;
+  padding:18px 16px;
+  background:#fff;
+  border:0.5px solid rgba(184,150,62,0.2);
+  border-radius:3px;
+  text-align:center;
+}
+.countdown-label{font-family:'Cinzel',serif;font-size:7px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.countdown-grid{display:flex;justify-content:center;gap:12px}
+.cd-unit{display:flex;flex-direction:column;align-items:center;gap:5px}
+.cd-num{
+  font-family:'Playfair Display',serif;font-size:28px;font-weight:400;color:var(--dark);
+  width:56px;height:56px;display:flex;align-items:center;justify-content:center;
+  border:0.5px solid rgba(184,150,62,0.2);border-radius:2px;
+  background:var(--gold-pale);
+}
+.cd-lbl{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--light)}
+
+/* ── RSVP PAGE ── */
+#p4{min-height:100vh;background:#fff;padding:0 0 80px;position:relative;overflow:hidden}
+
+.form-wrap{padding:0 20px}
+.fgroup{margin-bottom:20px}
+.flabel{
+  display:block;font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold);margin-bottom:9px;
+}
+.finput,.fselect,.ftextarea{
+  width:100%;
+  border:none;border-bottom:1px solid rgba(184,150,62,0.25);
+  padding:9px 0;font-size:13px;font-family:'Lato',sans-serif;
+  color:var(--dark);background:transparent;outline:none;
+  transition:border-color .3s;font-weight:300;border-radius:0;
+  -webkit-appearance:none;
+}
+.finput:focus,.fselect:focus,.ftextarea:focus{border-color:var(--gold)}
+.ftextarea{resize:none;min-height:65px}
+.fselect{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath d='M2 3.5l3 3 3-3' fill='none' stroke='%23B8963E' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 2px center;padding-right:20px;cursor:pointer;
+}
+
+.attend-row{display:flex;gap:10px;margin-top:4px}
+.att{
+  flex:1;padding:12px 6px;border:0.5px solid rgba(184,150,62,0.2);
+  border-radius:2px;cursor:pointer;transition:all .3s;text-align:center;
+  background:transparent;
+}
+.att.on{border-color:var(--gold);background:var(--gold-pale)}
+.att-ico{font-size:18px;display:block;margin-bottom:4px}
+.att-lbl{font-family:'Cinzel',serif;font-size:7.5px;letter-spacing:2px;text-transform:uppercase;color:var(--mid)}
+.att.on .att-lbl{color:var(--gold)}
+
+.submit-btn{
+  width:100%;padding:15px;margin-top:6px;
+  border:1px solid var(--gold);border-radius:2px;
+  background:transparent;color:var(--gold);
+  font-family:'Cinzel',serif;font-size:9px;letter-spacing:4px;text-transform:uppercase;
+  cursor:pointer;transition:all .3s;
+}
+.submit-btn:active{background:var(--gold);color:#fff}
+
+.thankyou{display:none;text-align:center;padding:28px 0}
+.ty-icon{font-size:44px;margin-bottom:14px}
+.ty-title{font-family:'Great Vibes',cursive;font-size:36px;color:var(--dark);margin-bottom:8px}
+.ty-msg{font-size:13px;color:var(--light);font-weight:300;line-height:1.7;padding:0 10px}
+.ty-verse{margin-top:18px;padding:16px;background:var(--ivory);border-radius:2px;font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:var(--mid);line-height:1.7}
+
+/* RSVP footer */
+.invitation-footer{
+  text-align:center;padding:38px 24px 20px;
+  border-top:0.5px solid rgba(184,150,62,0.12);margin-top:24px;
+}
+.footer-name{font-family:'Great Vibes',cursive;font-size:34px;color:var(--dark);margin-bottom:6px}
+.footer-line{width:44px;height:0.5px;background:linear-gradient(to right,transparent,var(--gold2),transparent);margin:0 auto 10px}
+.footer-date{font-family:'Cinzel',serif;font-size:8px;letter-spacing:3px;color:var(--light);text-transform:uppercase}
+
+/* ── FLORAL SVG HELPERS ── */
+.corner-fl{position:absolute;pointer-events:none}
+</style>
+</head>
+<body>
+
+<!-- ===== SPLASH ===== -->
+<div id="splash">
+  <div class="splash-petals" id="petals"></div>
+
+  <!-- big background watermark florals -->
+  <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.12;pointer-events:none" viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#B8963E" stroke-width=".6">
+      <!-- top-left bouquet -->
+      <ellipse cx="30" cy="28" rx="26" ry="11" transform="rotate(-35 30 28)"/>
+      <ellipse cx="60" cy="14" rx="24" ry="10" transform="rotate(-10 60 14)"/>
+      <ellipse cx="14" cy="62" rx="22" ry="9" transform="rotate(-70 14 62)"/>
+      <ellipse cx="85" cy="22" rx="28" ry="10" transform="rotate(8 85 22)"/>
+      <ellipse cx="20" cy="95" rx="20" ry="8" transform="rotate(-80 20 95)"/>
+      <circle cx="52" cy="40" r="8"/><circle cx="38" cy="28" r="5"/><circle cx="30" cy="46" r="4"/>
+      <line x1="52" y1="100" x2="52" y2="40"/><line x1="38" y1="100" x2="38" y2="28"/><line x1="30" y1="100" x2="30" y2="46"/>
+      <!-- top-right bouquet -->
+      <ellipse cx="360" cy="28" rx="26" ry="11" transform="rotate(35 360 28)"/>
+      <ellipse cx="330" cy="14" rx="24" ry="10" transform="rotate(10 330 14)"/>
+      <ellipse cx="376" cy="62" rx="22" ry="9" transform="rotate(70 376 62)"/>
+      <ellipse cx="305" cy="22" rx="28" ry="10" transform="rotate(-8 305 22)"/>
+      <circle cx="338" cy="40" r="8"/><circle cx="352" cy="28" r="5"/>
+      <line x1="338" y1="100" x2="338" y2="40"/>
+      <!-- bottom-left -->
+      <ellipse cx="30" cy="816" rx="26" ry="11" transform="rotate(35 30 816)"/>
+      <ellipse cx="60" cy="830" rx="24" ry="10" transform="rotate(10 60 830)"/>
+      <ellipse cx="14" cy="782" rx="22" ry="9" transform="rotate(70 14 782)"/>
+      <circle cx="52" cy="804" r="8"/>
+      <!-- bottom-right -->
+      <ellipse cx="360" cy="816" rx="26" ry="11" transform="rotate(-35 360 816)"/>
+      <ellipse cx="330" cy="830" rx="24" ry="10" transform="rotate(-10 330 830)"/>
+      <ellipse cx="376" cy="782" rx="22" ry="9" transform="rotate(-70 376 782)"/>
+      <circle cx="338" cy="804" r="8"/>
+    </g>
+    <!-- scattered small flowers -->
+    <g fill="none" stroke="#C9A84C" stroke-width=".4" opacity=".6">
+      <circle cx="180" cy="80" r="3"/><circle cx="210" cy="60" r="2"/><circle cx="160" cy="40" r="2.5"/>
+      <circle cx="195" cy="770" r="3"/><circle cx="165" cy="790" r="2"/><circle cx="220" cy="760" r="2.5"/>
+    </g>
+  </svg>
+
+  <div class="splash-ring">
+    <p class="splash-tag">Wedding Invitation</p>
+    <span class="splash-name">Rizky<span class="splash-and">&amp;</span>Amelia</span>
+    <p class="splash-date">22 · VI · 2025</p>
+  </div>
+
+  <div class="open-wrap">
+    <p class="open-hint">Ketuk untuk membuka</p>
+    <button class="open-btn" onclick="openApp()">Buka Undangan ✦</button>
+  </div>
+</div>
+
+<!-- ===== APP ===== -->
+<div id="app">
+
+  <!-- NAV DOTS -->
+  <div class="dots">
+    <div class="dot on" onclick="scrollTo('p1')"></div>
+    <div class="dot" onclick="scrollTo('p2')"></div>
+    <div class="dot" onclick="scrollTo('p3')"></div>
+    <div class="dot" onclick="scrollTo('p4')"></div>
+  </div>
+
+  <!-- ═══ PAGE 1: SAMPUL ═══ -->
+  <section id="p1">
+
+    <!-- large watermark floral background -->
+    <svg class="bg-floral" viewBox="0 0 390 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="opacity:.07">
+      <g fill="none" stroke="#B8963E" stroke-width="1">
+        <ellipse cx="50" cy="50" rx="45" ry="18" transform="rotate(-30 50 50)"/>
+        <ellipse cx="100" cy="20" rx="40" ry="16" transform="rotate(-8 100 20)"/>
+        <ellipse cx="18" cy="110" rx="38" ry="15" transform="rotate(-70 18 110)"/>
+        <ellipse cx="150" cy="30" rx="50" ry="17" transform="rotate(5 150 30)"/>
+        <ellipse cx="30" cy="160" rx="36" ry="14" transform="rotate(-80 30 160)"/>
+        <ellipse cx="180" cy="10" rx="45" ry="16" transform="rotate(-3 180 10)"/>
+        <circle cx="90" cy="75" r="14"/><circle cx="65" cy="50" r="9"/><circle cx="50" cy="80" r="7"/>
+        <line x1="90" y1="200" x2="90" y2="75"/><line x1="65" y1="200" x2="65" y2="50"/><line x1="50" y1="200" x2="50" y2="80"/>
+        <!-- right side -->
+        <ellipse cx="340" cy="50" rx="45" ry="18" transform="rotate(30 340 50)"/>
+        <ellipse cx="290" cy="20" rx="40" ry="16" transform="rotate(8 290 20)"/>
+        <ellipse cx="372" cy="110" rx="38" ry="15" transform="rotate(70 372 110)"/>
+        <circle cx="300" cy="75" r="14"/><circle cx="325" cy="50" r="9"/>
+        <line x1="300" y1="200" x2="300" y2="75"/><line x1="325" y1="200" x2="325" y2="50"/>
+        <!-- bottom -->
+        <ellipse cx="50" cy="850" rx="45" ry="18" transform="rotate(30 50 850)"/>
+        <ellipse cx="340" cy="850" rx="45" ry="18" transform="rotate(-30 340 850)"/>
+        <ellipse cx="195" cy="880" rx="50" ry="18"/>
+      </g>
+    </svg>
+
+    <!-- arch top label -->
+    <div class="arch-top">
+      <p class="arch-label">— The Wedding of —</p>
+    </div>
+
+    <!-- PHOTO FRAME -->
+    <div class="photo-frame" style="margin-top:22px">
+      <!-- Floral petals around the frame -->
+      <svg class="frame-petals" viewBox="0 0 230 230" xmlns="http://www.w3.org/2000/svg">
+        <!-- 8 petal clusters around circle -->
+        <g fill="none" stroke="#B8963E" stroke-width=".8" opacity=".6">
+          <!-- top -->
+          <ellipse cx="115" cy="8" rx="14" ry="6" transform="rotate(0 115 8)"/>
+          <ellipse cx="115" cy="4" rx="10" ry="4"/>
+          <!-- top-right -->
+          <ellipse cx="168" cy="26" rx="14" ry="6" transform="rotate(45 168 26)"/>
+          <!-- right -->
+          <ellipse cx="222" cy="115" rx="14" ry="6" transform="rotate(90 222 115)"/>
+          <!-- bottom-right -->
+          <ellipse cx="204" cy="204" rx="14" ry="6" transform="rotate(135 204 204)"/>
+          <!-- bottom -->
+          <ellipse cx="115" cy="222" rx="14" ry="6" transform="rotate(180 115 222)"/>
+          <!-- bottom-left -->
+          <ellipse cx="26" cy="204" rx="14" ry="6" transform="rotate(225 26 204)"/>
+          <!-- left -->
+          <ellipse cx="8" cy="115" rx="14" ry="6" transform="rotate(270 8 115)"/>
+          <!-- top-left -->
+          <ellipse cx="26" cy="26" rx="14" ry="6" transform="rotate(315 26 26)"/>
+        </g>
+        <!-- leaf accents -->
+        <g fill="none" stroke="#8FAF8A" stroke-width=".7" opacity=".5">
+          <ellipse cx="140" cy="6" rx="9" ry="3.5" transform="rotate(-20 140 6)"/>
+          <ellipse cx="90" cy="6" rx="9" ry="3.5" transform="rotate(20 90 6)"/>
+          <ellipse cx="220" cy="90" rx="9" ry="3.5" transform="rotate(70 220 90)"/>
+          <ellipse cx="220" cy="140" rx="9" ry="3.5" transform="rotate(110 220 140)"/>
+          <ellipse cx="10" cy="90" rx="9" ry="3.5" transform="rotate(-70 10 90)"/>
+          <ellipse cx="10" cy="140" rx="9" ry="3.5" transform="rotate(-110 10 140)"/>
+          <ellipse cx="90" cy="224" rx="9" ry="3.5" transform="rotate(160 90 224)"/>
+          <ellipse cx="140" cy="224" rx="9" ry="3.5" transform="rotate(200 140 224)"/>
+        </g>
+        <!-- gold dots at petal tips -->
+        <g fill="#D4AF5A" opacity=".7">
+          <circle cx="115" cy="3" r="2.5"/>
+          <circle cx="170" cy="20" r="2"/>
+          <circle cx="224" cy="115" r="2.5"/>
+          <circle cx="210" cy="210" r="2"/>
+          <circle cx="115" cy="227" r="2.5"/>
+          <circle cx="20" cy="210" r="2"/>
+          <circle cx="6" cy="115" r="2.5"/>
+          <circle cx="20" cy="20" r="2"/>
+        </g>
+      </svg>
+
+      <div class="photo-outer">
+        <div class="photo-inner">
+          <!-- Placeholder: pasangan foto dapat dimasukkan di sini -->
+          <svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+            <!-- Elegant couple silhouette illustration -->
+            <defs>
+              <linearGradient id="skinG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#EDCFB0"/>
+                <stop offset="100%" stop-color="#D4A87A"/>
+              </linearGradient>
+              <linearGradient id="dressG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#E8D8C8"/>
+                <stop offset="100%" stop-color="#C8B098"/>
+              </linearGradient>
+              <linearGradient id="suitG" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#3A2E22"/>
+                <stop offset="100%" stop-color="#2C2018"/>
+              </linearGradient>
+            </defs>
+            <!-- Background -->
+            <rect width="180" height="180" fill="#F5EDE0" rx="90"/>
+            <!-- soft floral hint bg -->
+            <circle cx="90" cy="90" r="85" fill="none" stroke="#D4AF5A" stroke-width=".4" opacity=".4"/>
+            <circle cx="90" cy="90" r="78" fill="none" stroke="#D4AF5A" stroke-width=".3" opacity=".2"/>
+
+            <!-- GROOM (left, slightly front) -->
+            <!-- body/suit -->
+            <path d="M54,140 Q46,120 48,105 L62,100 L70,140 Z" fill="url(#suitG)"/>
+            <!-- shirt white -->
+            <path d="M58,105 L62,100 L66,100 L68,110 L62,112 Z" fill="#F0ECE4"/>
+            <!-- tie -->
+            <polygon points="63,101 64,101 65,115 63,113" fill="#8B6A45"/>
+            <!-- jacket lapels -->
+            <path d="M54,108 L62,100 L60,114 Z" fill="#4A3828"/>
+            <path d="M70,108 L63,100 L65,114 Z" fill="#4A3828"/>
+            <!-- neck -->
+            <rect x="59" y="90" width="7" height="12" rx="3" fill="url(#skinG)"/>
+            <!-- head -->
+            <ellipse cx="62" cy="82" rx="12" ry="14" fill="url(#skinG)"/>
+            <!-- hair -->
+            <path d="M51,78 Q52,65 62,64 Q72,65 73,78 Q70,70 62,70 Q54,70 51,78 Z" fill="#2C1A0A"/>
+            <!-- ear -->
+            <ellipse cx="51" cy="82" rx="2.5" ry="3" fill="#DDA878"/>
+            <ellipse cx="73" cy="82" rx="2.5" ry="3" fill="#DDA878"/>
+            <!-- eye left-->
+            <ellipse cx="58" cy="82" rx="2" ry="1.5" fill="#3A2A1A"/>
+            <!-- eye right -->
+            <ellipse cx="66" cy="82" rx="2" ry="1.5" fill="#3A2A1A"/>
+            <!-- smile -->
+            <path d="M58,90 Q62,93 66,90" fill="none" stroke="#C0906A" stroke-width="1" stroke-linecap="round"/>
+            <!-- hand -->
+            <ellipse cx="70" cy="118" rx="5" ry="4" fill="url(#skinG)"/>
+
+            <!-- BRIDE (right, slightly back) -->
+            <!-- dress skirt -->
+            <path d="M96,135 Q90,115 93,105 L110,105 Q114,115 118,140 L96,140 Z" fill="url(#dressG)"/>
+            <!-- dress top -->
+            <path d="M93,105 Q98,95 105,93 Q112,95 110,105 Z" fill="#DDD0C0"/>
+            <!-- veil -->
+            <path d="M105,66 Q118,70 122,85 Q118,80 115,95 Q108,72 100,74 Z" fill="rgba(255,255,255,0.7)"/>
+            <!-- neck -->
+            <rect x="102" y="88" width="6" height="10" rx="3" fill="url(#skinG)"/>
+            <!-- head -->
+            <ellipse cx="105" cy="78" rx="11" ry="13" fill="url(#skinG)"/>
+            <!-- hair -->
+            <path d="M94,76 Q95,60 105,59 Q116,60 116,75 Q114,63 105,63 Q96,63 94,76 Z" fill="#3D2510"/>
+            <!-- hair updo bun -->
+            <ellipse cx="108" cy="60" rx="7" ry="6" fill="#3D2510"/>
+            <!-- flower in hair -->
+            <circle cx="113" cy="56" r="4" fill="#C8929E" opacity=".9"/>
+            <circle cx="113" cy="56" r="2" fill="#F0D98A"/>
+            <!-- ear -->
+            <ellipse cx="94" cy="78" rx="2" ry="3" fill="#DDA878"/>
+            <!-- eyes -->
+            <ellipse cx="101" cy="77" rx="1.8" ry="1.4" fill="#3A2A1A"/>
+            <ellipse cx="109" cy="77" rx="1.8" ry="1.4" fill="#3A2A1A"/>
+            <!-- lashes left -->
+            <line x1="99.5" y1="75.5" x2="98" y2="74" stroke="#2C1A0A" stroke-width=".7"/>
+            <line x1="101" y1="75" x2="100" y2="73.5" stroke="#2C1A0A" stroke-width=".7"/>
+            <!-- smile -->
+            <path d="M101,85 Q105,88 109,85" fill="none" stroke="#C0906A" stroke-width="1" stroke-linecap="round"/>
+            <!-- lips tint -->
+            <path d="M102,86 Q105,88.5 108,86" fill="#CC8899" opacity=".5"/>
+            <!-- necklace -->
+            <path d="M99,94 Q105,97 111,94" fill="none" stroke="#D4AF5A" stroke-width=".8"/>
+            <circle cx="105" cy="97" r="1.5" fill="#D4AF5A"/>
+            <!-- holding hands -->
+            <ellipse cx="89" cy="116" rx="5" ry="4" fill="url(#skinG)"/>
+            <!-- ring -->
+            <circle cx="71" cy="118" r="2" fill="none" stroke="#D4AF5A" stroke-width=".8"/>
+
+            <!-- bouquet -->
+            <circle cx="80" cy="130" r="10" fill="#C8929E" opacity=".8"/>
+            <circle cx="75" cy="127" r="7" fill="#D4A8B0" opacity=".7"/>
+            <circle cx="85" cy="127" r="6" fill="#E0B0BC" opacity=".6"/>
+            <circle cx="80" cy="123" r="5" fill="#F0C8D0" opacity=".7"/>
+            <!-- bouquet center flowers -->
+            <circle cx="80" cy="130" r="3" fill="#F0D98A"/>
+            <circle cx="75" cy="127" r="2.5" fill="#F0D98A" opacity=".8"/>
+            <!-- stems -->
+            <line x1="78" y1="140" x2="76" y2="148" stroke="#8FAF8A" stroke-width="1.2"/>
+            <line x1="80" y1="140" x2="80" y2="150" stroke="#8FAF8A" stroke-width="1.2"/>
+            <line x1="82" y1="140" x2="84" y2="148" stroke="#8FAF8A" stroke-width="1.2"/>
+            <!-- ribbon -->
+            <path d="M76,143 Q80,146 84,143" fill="none" stroke="#D4AF5A" stroke-width=".8"/>
+
+            <!-- decorative dots -->
+            <circle cx="20" cy="20" r="1.5" fill="#D4AF5A" opacity=".4"/>
+            <circle cx="160" cy="20" r="1.5" fill="#D4AF5A" opacity=".4"/>
+            <circle cx="20" cy="160" r="1.5" fill="#D4AF5A" opacity=".4"/>
+            <circle cx="160" cy="160" r="1.5" fill="#D4AF5A" opacity=".4"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAMES -->
+    <div class="cover-names">
+      <div class="groom-name">Rizky Pratama</div>
+      <span class="names-and">&amp;</span>
+      <div class="bride-name">Amelia Putri</div>
+    </div>
+
+    <div class="cover-divider" style="position:relative;z-index:2;padding:0 40px">
+      <div class="cdl"></div>
+      <div class="cd-diamond"></div>
+      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:12px;color:var(--gold2);letter-spacing:1px">Minggu</div>
+      <div class="cd-diamond"></div>
+      <div class="cdr"></div>
+    </div>
+    <div style="position:relative;z-index:2;text-align:center;padding-bottom:60px">
+      <p class="cover-date">22 Juni 2025</p>
+      <p class="cover-loc">Makassar, Sulawesi Selatan</p>
+    </div>
+
+    <!-- corner florals -->
+    <svg class="corner-fl" style="top:0;left:0;width:120px;opacity:.35" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#B8963E" stroke-width=".7">
+        <ellipse cx="18" cy="14" rx="20" ry="8" transform="rotate(-30 18 14)"/>
+        <ellipse cx="45" cy="6" rx="22" ry="8" transform="rotate(-8 45 6)"/>
+        <ellipse cx="6" cy="45" rx="18" ry="7" transform="rotate(-72 6 45)"/>
+        <ellipse cx="72" cy="10" rx="24" ry="8" transform="rotate(6 72 10)"/>
+        <ellipse cx="10" cy="75" rx="18" ry="7" transform="rotate(-82 10 75)"/>
+        <circle cx="40" cy="30" r="7"/><circle cx="28" cy="20" r="4.5"/><circle cx="20" cy="38" r="3.5"/>
+        <line x1="40" y1="110" x2="40" y2="30"/><line x1="28" y1="110" x2="28" y2="20"/>
+      </g>
+      <g fill="#C9A84C" opacity=".5">
+        <circle cx="40" cy="30" r="3"/><circle cx="28" cy="20" r="2"/>
+        <ellipse cx="20" cy="12" rx="4" ry="1.5" transform="rotate(-20 20 12)" fill="none" stroke="#8FAF8A" stroke-width=".6"/>
+      </g>
+    </svg>
+    <svg class="corner-fl" style="top:0;right:0;width:120px;opacity:.35;transform:scaleX(-1)" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#B8963E" stroke-width=".7">
+        <ellipse cx="18" cy="14" rx="20" ry="8" transform="rotate(-30 18 14)"/>
+        <ellipse cx="45" cy="6" rx="22" ry="8" transform="rotate(-8 45 6)"/>
+        <ellipse cx="6" cy="45" rx="18" ry="7" transform="rotate(-72 6 45)"/>
+        <ellipse cx="72" cy="10" rx="24" ry="8" transform="rotate(6 72 10)"/>
+        <circle cx="40" cy="30" r="7"/><circle cx="28" cy="20" r="4.5"/>
+        <line x1="40" y1="110" x2="40" y2="30"/>
+      </g>
+    </svg>
+    <svg class="corner-fl" style="bottom:60px;left:0;width:100px;opacity:.28;transform:scaleY(-1)" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#B8963E" stroke-width=".7">
+        <ellipse cx="18" cy="14" rx="20" ry="8" transform="rotate(-30 18 14)"/>
+        <ellipse cx="45" cy="6" rx="22" ry="8" transform="rotate(-8 45 6)"/>
+        <ellipse cx="6" cy="45" rx="18" ry="7" transform="rotate(-72 6 45)"/>
+        <circle cx="40" cy="30" r="7"/>
+        <line x1="40" y1="110" x2="40" y2="30"/>
+      </g>
+    </svg>
+    <svg class="corner-fl" style="bottom:60px;right:0;width:100px;opacity:.28;transform:scale(-1,-1)" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#B8963E" stroke-width=".7">
+        <ellipse cx="18" cy="14" rx="20" ry="8" transform="rotate(-30 18 14)"/>
+        <ellipse cx="45" cy="6" rx="22" ry="8" transform="rotate(-8 45 6)"/>
+        <circle cx="40" cy="30" r="7"/>
+        <line x1="40" y1="110" x2="40" y2="30"/>
+      </g>
+    </svg>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══ PAGE 2: ISI ═══ -->
+  <section id="p2">
+    <svg class="corner-fl" style="top:0;left:0;width:90px;opacity:.25" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#B8963E" stroke-width=".7">
+        <ellipse cx="14" cy="10" rx="16" ry="7" transform="rotate(-25 14 10)"/>
+        <ellipse cx="38" cy="5" rx="18" ry="7"/>
+        <ellipse cx="5" cy="38" rx="14" ry="6" transform="rotate(-70 5 38)"/>
+        <circle cx="28" cy="22" r="5.5"/>
+        <line x1="28" y1="80" x2="28" y2="22"/>
+      </g>
+    </svg>
+    <svg class="corner-fl" style="top:0;right:0;width:90px;opacity:.25;transform:scaleX(-1)" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#B8963E" stroke-width=".7">
+        <ellipse cx="14" cy="10" rx="16" ry="7" transform="rotate(-25 14 10)"/>
+        <ellipse cx="38" cy="5" rx="18" ry="7"/>
+        <circle cx="28" cy="22" r="5.5"/>
+        <line x1="28" y1="80" x2="28" y2="22"/>
+      </g>
+    </svg>
+
+    <div class="page-top">
+      <p class="section-eyebrow">— Dengan Rahmat Allah SWT —</p>
+      <p class="section-title">Kami Bermaksud<br>Melangsungkan Pernikahan</p>
+    </div>
+
+    <div class="bride-groom-wrap" style="padding:0 20px">
+      <div class="person-card">
+        <div class="person-photo">R</div>
+        <div class="person-info">
+          <p class="person-role">Mempelai Pria</p>
+          <p class="person-name">Rizky Pratama, S.T.</p>
+          <p class="person-parents">Putra ke-1 dari<br>Bpk. Ahmad Syarif &amp; Ibu Siti Rahayu</p>
+        </div>
+      </div>
+      <div class="and-banner">&amp;</div>
+      <div class="person-card">
+        <div class="person-photo" style="background:linear-gradient(135deg,#fdf0f4,var(--ivory));color:var(--rose)">A</div>
+        <div class="person-info">
+          <p class="person-role">Mempelai Wanita</p>
+          <p class="person-name">Amelia Putri, S.Pd.</p>
+          <p class="person-parents">Putri ke-2 dari<br>Bpk. Hendra Kusuma &amp; Ibu Dewi Lestari</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="event-section">
+      <div class="event-item">
+        <div class="ev-tag">💍 Akad Nikah <div class="ev-tag-line"></div></div>
+        <p class="ev-name">Ijab Qabul</p>
+        <div class="ev-detail">
+          <b>Minggu, 22 Juni 2025</b><br>
+          Pukul 08.00 – 10.00 WITA<br>
+          Masjid Al-Ikhlas, Jl. Sudirman No. 1<br>
+          Makassar, Sulawesi Selatan
+        </div>
+      </div>
+      <div class="event-item">
+        <div class="ev-tag">🎊 Resepsi <div class="ev-tag-line"></div></div>
+        <p class="ev-name">Walimatul Ursy</p>
+        <div class="ev-detail">
+          <b>Minggu, 22 Juni 2025</b><br>
+          Pukul 11.00 – 14.00 WITA<br>
+          Grand Ballroom Hotel Marannu<br>
+          Jl. Sultan Hasanuddin No. 3, Makassar
+        </div>
+      </div>
+    </div>
+
+    <div class="quran-box">
+      <p class="quran-text">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."</p>
+      <p class="quran-ref">— QS. Ar-Rum : 21 —</p>
+    </div>
+  </section>
+
+  <!-- ═══ PAGE 3: MAPS ═══ -->
+  <section id="p3">
+    <svg class="corner-fl" style="top:0;right:0;width:90px;opacity:.2;transform:scaleX(-1)" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#B8963E" stroke-width=".7">
+        <ellipse cx="14" cy="10" rx="16" ry="7" transform="rotate(-25 14 10)"/>
+        <ellipse cx="38" cy="5" rx="18" ry="7"/>
+        <ellipse cx="5" cy="38" rx="14" ry="6" transform="rotate(-70 5 38)"/>
+        <circle cx="28" cy="22" r="5.5"/>
+        <line x1="28" y1="80" x2="28" y2="22"/>
+      </g>
+    </svg>
+
+    <div class="page-top">
+      <p class="section-eyebrow">— Lokasi Acara —</p>
+      <p class="section-title">Petunjuk Arah</p>
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown-wrap">
+      <p class="countdown-label">Menghitung Hari Menuju Hari Bahagia</p>
+      <div class="countdown-grid">
+        <div class="cd-unit">
+          <div class="cd-num" id="cd-d">--</div>
+          <span class="cd-lbl">Hari</span>
+        </div>
+        <div class="cd-unit">
+          <div class="cd-num" id="cd-h">--</div>
+          <span class="cd-lbl">Jam</span>
+        </div>
+        <div class="cd-unit">
+          <div class="cd-num" id="cd-m">--</div>
+          <span class="cd-lbl">Menit</span>
+        </div>
+        <div class="cd-unit">
+          <div class="cd-num" id="cd-s">--</div>
+          <span class="cd-lbl">Detik</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="height:14px"></div>
+
+    <div class="map-frame">
+      <div class="map-overlay-top"></div>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126768.59!2d119.35726!3d-5.13298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbee2e5e27be649%3A0x7d6af3b7279ad5df!2sMakassar%2C%20Sulawesi%20Selatan!5e0!3m2!1sid!2sid!4v1700000000000"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <div class="loc-cards">
+      <div class="loc-card">
+        <div class="loc-icon-wrap">💍</div>
+        <div>
+          <p class="loc-name">Akad Nikah</p>
+          <p class="loc-addr">Masjid Al-Ikhlas<br>Jl. Sudirman No. 1, Makassar 90111</p>
+        </div>
+      </div>
+      <div class="loc-card">
+        <div class="loc-icon-wrap">🏛️</div>
+        <div>
+          <p class="loc-name">Resepsi Pernikahan</p>
+          <p class="loc-addr">Grand Ballroom Hotel Marannu<br>Jl. Sultan Hasanuddin No. 3, Makassar 90111</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-btn-wrap">
+      <a class="map-btn" href="https://maps.google.com/?q=Makassar,Sulawesi+Selatan" target="_blank">
+        🗺️ &nbsp; Buka di Google Maps
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ PAGE 4: RSVP ═══ -->
+  <section id="p4">
+    <svg class="corner-fl" style="top:0;left:0;width:90px;opacity:.2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#B8963E" stroke-width=".7">
+        <ellipse cx="14" cy="10" rx="16" ry="7" transform="rotate(-25 14 10)"/>
+        <ellipse cx="38" cy="5" rx="18" ry="7"/>
+        <ellipse cx="5" cy="38" rx="14" ry="6" transform="rotate(-70 5 38)"/>
+        <circle cx="28" cy="22" r="5.5"/>
+        <line x1="28" y1="80" x2="28" y2="22"/>
+      </g>
+    </svg>
+
+    <div class="page-top" style="padding-bottom:20px">
+      <p class="section-eyebrow">— Konfirmasi Kehadiran —</p>
+      <p class="section-title">Formulir Tamu</p>
+      <p style="font-size:12px;color:var(--light);margin-top:8px;font-weight:300">Kehadiran Anda adalah kebahagiaan kami</p>
+    </div>
+
+    <div class="form-wrap">
+      <div id="rsvp-form">
+        <div class="fgroup">
+          <label class="flabel">Nama Lengkap</label>
+          <input type="text" class="finput" id="f-name" placeholder="Masukkan nama Anda"/>
+        </div>
+        <div class="fgroup">
+          <label class="flabel">Nomor WhatsApp</label>
+          <input type="tel" class="finput" id="f-phone" placeholder="08xxxxxxxxxx"/>
+        </div>
+        <div class="fgroup">
+          <label class="flabel">Sesi Kehadiran</label>
+          <select class="fselect" id="f-session">
+            <option value="">Pilih sesi acara...</option>
+            <option value="akad">Akad Nikah · 08.00 – 10.00 WITA</option>
+            <option value="resepsi">Resepsi · 11.00 – 14.00 WITA</option>
+            <option value="both">Akad &amp; Resepsi</option>
+          </select>
+        </div>
+        <div class="fgroup">
+          <label class="flabel">Jumlah Tamu</label>
+          <select class="fselect" id="f-count">
+            <option value="1">1 orang</option>
+            <option value="2">2 orang</option>
+            <option value="3">3 orang</option>
+            <option value="4">4 orang</option>
+            <option value="5+">5 orang atau lebih</option>
+          </select>
+        </div>
+        <div class="fgroup">
+          <label class="flabel">Konfirmasi Kehadiran</label>
+          <div class="attend-row">
+            <div class="att on" id="att-y" onclick="pickAtt('y')">
+              <span class="att-ico">✅</span>
+              <span class="att-lbl">Hadir</span>
+            </div>
+            <div class="att" id="att-n" onclick="pickAtt('n')">
+              <span class="att-ico">🙏</span>
+              <span class="att-lbl">Tidak Hadir</span>
+            </div>
+          </div>
+        </div>
+        <div class="fgroup">
+          <label class="flabel">Doa &amp; Ucapan</label>
+          <textarea class="ftextarea" id="f-wish" placeholder="Tuliskan doa dan ucapan selamat untuk kami..."></textarea>
+        </div>
+        <button class="submit-btn" onclick="doSubmit()">✦ &nbsp; Kirim Konfirmasi &nbsp; ✦</button>
+      </div>
+
+      <div class="thankyou" id="ty">
+        <div class="ty-icon">🌸</div>
+        <p class="ty-title">Terima Kasih</p>
+        <p class="ty-msg" id="ty-msg">Kehadiran Anda sangat berarti bagi kami.</p>
+        <div class="ty-verse">"Semoga Allah memberkahi kalian berdua, dan mengumpulkan kalian dalam kebaikan." — HR. Abu Dawud</div>
+      </div>
+    </div>
+
+    <div class="invitation-footer">
+      <p class="footer-name">Rizky &amp; Amelia</p>
+      <div class="footer-line"></div>
+      <p class="footer-date">22 Juni 2025 · Makassar</p>
+      <svg width="140" height="32" viewBox="0 0 140 32" style="margin-top:16px;opacity:.35" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#B8963E" stroke-width=".7">
+          <ellipse cx="15" cy="16" rx="12" ry="5" transform="rotate(-15 15 16)"/>
+          <ellipse cx="35" cy="10" rx="11" ry="4.5" transform="rotate(5 35 10)"/>
+          <circle cx="26" cy="15" r="3.5"/><line x1="26" y1="15" x2="26" y2="30"/>
+          <ellipse cx="105" cy="10" rx="11" ry="4.5" transform="rotate(-5 105 10)"/>
+          <ellipse cx="125" cy="16" rx="12" ry="5" transform="rotate(15 125 16)"/>
+          <circle cx="114" cy="15" r="3.5"/><line x1="114" y1="15" x2="114" y2="30"/>
+        </g>
+        <line x1="38" y1="16" x2="102" y2="16" stroke="#D4AF5A" stroke-width=".5"/>
+        <polygon points="70,12 68,16 70,20 72,16" fill="#D4AF5A" opacity=".6"/>
+      </svg>
+    </div>
+  </section>
+
+</div>
+
+<script>
+// ── FALLING PETALS ──
+(function(){
+  var wrap = document.getElementById('petals');
+  var colors = ['#F5DDE0','#EDD5C8','#F0E6D8','#DDE8D5','#F5EAD8'];
+  for(var i=0;i<18;i++){
+    var p = document.createElement('div');
+    p.className='petal';
+    var w=Math.random()*12+6, h=w*(Math.random()*.5+.3);
+    p.style.cssText=[
+      'width:'+w+'px','height:'+h+'px',
+      'background:'+colors[Math.floor(Math.random()*colors.length)],
+      'border-radius:'+(Math.random()>.5?'50%':'40% 60% 60% 40% / 50% 40% 60% 50%'),
+      'left:'+(Math.random()*100)+'%',
+      'top:0',
+      'animation-duration:'+(Math.random()*6+5)+'s',
+      'animation-delay:'+(-Math.random()*8)+'s',
+    ].join(';');
+    wrap.appendChild(p);
+  }
+})();
+
+// ── OPEN ──
+function openApp(){
+  document.getElementById('splash').classList.add('exit');
+  setTimeout(function(){
+    document.getElementById('splash').style.display='none';
+    document.getElementById('app').classList.add('show');
+    startCountdown();
+  },1000);
+}
+
+// ── DOTS ──
+window.addEventListener('scroll',function(){
+  var ids=['p1','p2','p3','p4'];
+  var dots=document.querySelectorAll('.dot');
+  var mid=window.scrollY+window.innerHeight*.45;
+  ids.forEach(function(id,i){
+    var el=document.getElementById(id);
+    if(!el)return;
+    if(mid>=el.offsetTop && mid<el.offsetTop+el.offsetHeight){
+      dots.forEach(function(d){d.classList.remove('on')});
+      dots[i].classList.add('on');
+    }
+  });
+},{passive:true});
+
+function scrollTo(id){
+  var el=document.getElementById(id);
+  if(el)el.scrollIntoView({behavior:'smooth'});
+}
+
+// ── COUNTDOWN ──
+function startCountdown(){
+  var target=new Date('2025-06-22T08:00:00+08:00');
+  function tick(){
+    var now=new Date(), diff=target-now;
+    if(diff<=0){
+      ['cd-d','cd-h','cd-m','cd-s'].forEach(function(id){document.getElementById(id).textContent='00'});
+      return;
+    }
+    var d=Math.floor(diff/864e5);
+    var h=Math.floor((diff%864e5)/36e5);
+    var m=Math.floor((diff%36e5)/6e4);
+    var s=Math.floor((diff%6e4)/1e3);
+    document.getElementById('cd-d').textContent=String(d).padStart(2,'0');
+    document.getElementById('cd-h').textContent=String(h).padStart(2,'0');
+    document.getElementById('cd-m').textContent=String(m).padStart(2,'0');
+    document.getElementById('cd-s').textContent=String(s).padStart(2,'0');
+  }
+  tick(); setInterval(tick,1000);
+}
+
+// ── RSVP ──
+var attChoice='y';
+function pickAtt(v){
+  attChoice=v;
+  document.getElementById('att-y').classList.toggle('on',v==='y');
+  document.getElementById('att-n').classList.toggle('on',v==='n');
+}
+
+function doSubmit(){
+  var name=document.getElementById('f-name').value.trim();
+  var phone=document.getElementById('f-phone').value.trim();
+  var session=document.getElementById('f-session').value;
+  if(!name){alert('Mohon isi nama lengkap Anda.');return;}
+  if(!phone){alert('Mohon isi nomor WhatsApp Anda.');return;}
+  if(!session){alert('Mohon pilih sesi kehadiran.');return;}
+  document.getElementById('rsvp-form').style.display='none';
+  var ty=document.getElementById('ty');
+  ty.style.display='block';
+  var msg=attChoice==='y'
+    ?name+', kami sangat senang Anda akan hadir! Sampai jumpa di hari bahagia kami. 🌸'
+    :name+', terima kasih atas doa dan ucapan Anda. Semoga kita dapat bertemu di kesempatan lain. 🙏';
+  document.getElementById('ty-msg').textContent=msg;
+}
+</script>
+</body>
+</html>
